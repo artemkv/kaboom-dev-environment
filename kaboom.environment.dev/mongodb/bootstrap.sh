@@ -27,7 +27,7 @@ if ! [ -d /vagrant/mongodb/mongodb-log ]; then
   mkdir /vagrant/mongodb/mongodb-log
 fi
 
-# Point mongo db to our folder
+# Point mongo db logs to our folder
 # Usage: ln -sf /path/to/file /path/to/symlink
 if ! [ -L /var/log/mongodb ]; then
   rm -rf /var/log/mongodb
