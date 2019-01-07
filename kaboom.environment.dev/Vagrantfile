@@ -19,5 +19,11 @@ Vagrant.configure("2") do |config|
 	kafka.vm.network "forwarded_port", guest: 9092, host: 9092 # Kafka
 	kafka.vm.network "forwarded_port", guest: 2181, host: 2181 # Zookeeper
 	kafka.vm.provision "shell", path: "kafka/bootstrap.sh", run: "always"
+	kafka.vm.provision "shell", path: "kafka/create_topics.sh", run: "always"
+	
+	kafka.trigger.before "halt" do |trigger|
+		trigger.warn = "Shutting down Kafka/Zookeeper"
+		trigger.run_remote = {path: "kafka/shutdown.sh"}
+	end
   end
 end

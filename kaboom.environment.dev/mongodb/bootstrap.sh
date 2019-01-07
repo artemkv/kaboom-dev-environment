@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo VAGRANT BOOTSTRAP Install mongodb, if not yet installed...
+echo VAGRANT BOOTSTRAP Installing mongodb, if not yet installed...
 
 # Import the public key used by the package management system
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4 2>&1
@@ -37,7 +37,7 @@ fi
 # Copy mongodb configuration
 cp /vagrant/mongodb/mongod.conf /etc/mongod.conf
 
-echo VAGRANT BOOTSTRAP Start mongodb...
+echo VAGRANT BOOTSTRAP Starting MongoDB...
 
 # Start MongoDB
 sudo service mongod start

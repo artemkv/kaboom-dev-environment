@@ -3,14 +3,14 @@
 # Reload local package database
 sudo apt-get update
 
-echo VAGRANT BOOTSTRAP Install Java, if not yet installed...
+echo VAGRANT BOOTSTRAP Installing Java, if not yet installed...
 
 # Install Java
 sudo apt-get install -y openjdk-8-jre
 # Pin the packages at the currently installed versions to prevent unintended upgrades
 echo "openjdk-8-jre hold" | sudo dpkg --set-selections
 
-echo VAGRANT BOOTSTRAP Install Scala, if not yet installed...
+echo VAGRANT BOOTSTRAP Installing Scala, if not yet installed...
 
 # Install Scala
 sudo apt-get install -y scala
@@ -62,11 +62,11 @@ sudo apt-get install -y kafkacat
 cp /vagrant/kafka/server.properties /usr/local/bin/kafka/config/server.properties
 
 # Start Zookeeper
-echo VAGRANT BOOTSTRAP Start zookeeper...
+echo VAGRANT BOOTSTRAP Starting Zookeeper...
 bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
 
 # Start Kafka
-echo VAGRANT BOOTSTRAP Start kafka...
+echo VAGRANT BOOTSTRAP Starting Kafka...
 bin/kafka-server-start.sh -daemon config/server.properties
 
 echo VAGRANT BOOTSTRAP Done
