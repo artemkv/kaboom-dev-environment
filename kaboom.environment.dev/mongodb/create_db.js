@@ -1,5 +1,8 @@
 let db = connect("localhost:27017/kaboom");
 
+// Create index for users
+db.users.ensureIndex({"userId" : 1});
+
 // Create test application
 db.applications.update(
   { appCode: '9735965b-e1cb-4d7f-adb9-a4adf457f61a' },
