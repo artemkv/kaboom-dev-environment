@@ -12,12 +12,13 @@ db.applications.update(
 db.applications.ensureIndex({"appCode" : 1});
 
 // Create indexes for start event stats
-db.appstats.start.bysecond.ensureIndex({"appId" : 1, "dt" : 1});
-db.appstats.start.byminute.ensureIndex({"appId" : 1, "dt" : 1});
-db.appstats.start.byhour.ensureIndex({"appId" : 1, "dt" : 1});
-db.appstats.start.byday.ensureIndex({"appId" : 1, "dt" : 1});
-db.appstats.start.bymonth.ensureIndex({"appId" : 1, "dt" : 1});
-db.appstats.start.byyear.ensureIndex({"appId" : 1, "dt" : 1});
+db.user.launches.bymonth.ensureIndex({"appId" : 1, "userId" : 1, "dt" : 1});
+db.user.launches.byday.ensureIndex({"appId" : 1, "userId" : 1, "dt" : 1});
+db.user.launches.byhour.ensureIndex({"appId" : 1, "userId" : 1, "dt" : 1});
+
+db.uniqueusers.bymonth.ensureIndex({"appId" : 1, "dt" : 1});
+db.uniqueusers.byday.ensureIndex({"appId" : 1, "dt" : 1});
+db.uniqueusers.byhour.ensureIndex({"appId" : 1, "dt" : 1});
 
 // Create indexes for crash event stats
 db.appstats.crash.bysecond.ensureIndex({"appId" : 1, "dt" : 1});
